@@ -1,0 +1,42 @@
+<!--
+    Rest Parameters in Functions
+    ****************************
+        - it is used to store the "more" than one value in single argument.
+
+        - "..." called as "spread" operator.
+
+        - it is introduced in "ES6".
+
+        -  we can have only "one" rest parameter per function.
+
+        - the occurance of rest parameter should be "last".
+
+        - The default value of spread parameter is []
+
+-->
+
+<!--
+<script>
+    function fun_one(...arg1){
+        console.log( arg1 );
+    };
+    fun_one();                              //[]
+    fun_one("Hello_1");                     //['Hello_1']
+    fun_one("Hello_1","Hello_2");           //['Hello_1', 'Hello_2']
+    fun_one(undefined);                     //[undefined]
+    fun_one(undefined,null);                //[undefined, null]
+</script>
+-->
+
+<script>
+    function fun_one(arg1,...arg2){
+        console.log(arg1,arg2);
+    };
+    fun_one();                                      //undefined []
+    fun_one(undefined);                             //undefined []
+    fun_one("Hello_1");                             //Hello_1 []
+    fun_one("Hello_1","Hello_2");                   //Hello_1 ['Hello_2']
+    fun_one("Hello_1","Hello_2","Hello_3");         //Hello_1  ['Hello_2', 'Hello_3']
+    fun_one(undefined,undefined);                   //undefined [undefined]
+    fun_one(null,null);                             //null [null]
+</script>
