@@ -1,0 +1,98 @@
+<!--
+    Arrow Functions
+    ***************
+        - The function without name called as "Anonymous" Function.
+
+        - Anonymous Functions also called as "Arrow" Functions.
+
+        - Arrow Functions behaves like "Callback" Functions.
+
+        - we will represent Arrow Functions with "=>"
+
+        - Arrow Functions introduced in "ES6".
+
+    Syntax:
+    *******
+    1) function definition
+
+    2) function calling
+
+      var/let/const variablename = (arg1,arg2,arg3,....arg n)=>{
+        business logic
+    }
+
+    variablename(param1,param2,param3.......param n);
+
+--> 
+
+<!--
+<script>
+    let fun_one = ()=>{
+        return "Hello";
+    }
+
+    console.log( fun_one );         //def
+    console.log( fun_one() );       //Hello
+
+</script>
+-->
+
+<!--
+<script>
+    let fun_one = (arg1,arg2,arg3)=>{
+        console.log( arg1, arg2, arg3 );
+    };
+    fun_one("Hello_1","Hello_2","Hello_3");             //Hello_1 Hello_2 Hello_3
+    fun_one();                                          //undefined undefined undefined
+    fun_one(null,null,null);                            //null null null
+</script>
+-->
+
+<!--
+<script>
+   let fun_one = (arg1, arg2, arg3)=>{
+    console.log( arg1(), arg2(), arg3()  );
+   };
+   fun_one( ()=>{
+       return "Hello_1";
+   }, ()=>{
+       return "Hello_2";
+   }, ()=>{
+       return "Hello_3";
+   } );                                         //Hello_1 Hello_2 Hello_3
+</script>
+-->
+
+<!--
+<script>
+    let initilize = (user,getElementsByEmail,getElementsById)=>{
+        console.log(user,getElementsByEmail(),getElementsById());
+    };
+
+    let getElementsByEmail = ()=>{
+        return "Hello_2";
+    }
+
+    let getElementsById = ()=>{
+        return "Hello_3";
+    };
+
+    initilize("Hello_1",getElementsByEmail,getElementsById);                    //Hello_1 Hello_2 Hello_3
+</script>
+-->
+
+<!--
+<script>
+    let arr = [];
+    for(let i=0;i<5;i++){
+        arr.push( ()=>{ return "Hello"} );
+    }
+
+    for(let j=0;j<arr.length;j++){
+        console.log( arr[j]() );
+    }
+</script>
+-->
+
+
+

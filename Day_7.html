@@ -28,6 +28,7 @@
 </script>
 -->
 
+<!--
 <script>
     function fun_one(arg1,...arg2){
         console.log(arg1,arg2);
@@ -40,3 +41,20 @@
     fun_one(undefined,undefined);                   //undefined [undefined]
     fun_one(null,null);                             //null [null]
 </script>
+-->
+
+<!--
+<script>
+    function fun_one(...arg1,arg2){};               //Uncaught SyntaxError: Rest parameter must be last formal parameter
+</script>
+-->
+
+<!--
+<script>
+    function fun_one(arg3,...arg1,...arg2){}        //Uncaught SyntaxError: Rest parameter must be last formal parameter
+</script>
+-->
+
+
+
+
