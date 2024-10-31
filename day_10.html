@@ -23,20 +23,138 @@
 
 <!--
 <script>
-    let msg=(()=>{
-        return "Welcome to Life";
+    let msg = (()=>{
+        return "welcome to iife";
     })();
-    console.log(msg);
+    console.log(msg);               //welcome to iife
 </script>
 -->
 
+<!--
+<script>
+    function fun_one(arg1,arg2,arg3){
+        console.log(arg1,arg2,arg3);
+    };
+
+    fun_one( (()=>{ return "Hello_1"})(),
+            (()=>{ return "Hello_2"})(),
+            (()=>{ return "Hello_3"})() );              //Hello_1 Hello_2 Hello_3
+</script>
+-->
+
+
+<!--
+<script>
+    ((arg1,arg2,arg3)=>{
+        console.log( arg1, arg2, arg3 );
+    })("Hello_1","Hello_2","Hello_3");                  //Hello_1 Hello_2 Hello_3
+</script>
+-->
+
+<!--
+<script>
+   for(var i=0;i<5;i++){
+       ((i)=>{
+        setTimeout(()=>{
+                console.log(i);
+        },5000)
+       })(i);
+   }
+</script>
+-->
+
+<!-- constructor functions 
+
+    - constructor functions used to create the "classes" like "structures" before "ES6".
+
+    - in constructor functions(variables and functions) should start with "this" keyword.
+
+    - this keyword representing the "current" class members.
+
+    - we will create the object with the help of "new" keyword.
+-->
+
+
+<!--
+<script>
+   function class_one(){
+        this.sub_one = "Angular13";
+        this.sub_two = "NodeJS";
+        this.sub_three = "MongoDB";
+   };
+   let obj1 = new class_one();
+   console.log(
+       obj1.sub_one,
+       obj1.sub_two,
+       obj1.sub_three
+   );                           //Angular13 NodeJS MongoDB
+
+
+   let obj2 = new class_one();
+   console.log(
+    obj2.sub_one,
+    obj2.sub_two,
+    obj2.sub_three
+   );                           //Angular13 NodeJS MongoDB
+</script>
+-->
+
+
+<!--
 <script>
     function class_one(){
-        this.wish="Js";
-        this.my=function(){
-            return `welcome to ${this.wish}`;
+        this.wish = "JavaScript";
+        this.my_fun = function(){
+            return `Welcome to ${this.wish}`;
         };
     };
-    let obj1=new class_one();
-    console.log(obj1.my());
+    let obj1 = new class_one();
+    console.log( obj1.my_fun() );                   //Welcome to JavaScript
 </script>
+-->
+
+<!--
+<script>
+    function class_one(){
+        this.var_one = "Hello_1";
+        this.var_two = "Hello_2";
+        this.var_three = "Hello_3";
+
+        this.fun_one = function(){
+            return this.var_one;
+        };
+
+        this.fun_two = function(){
+            return this.var_two;
+        };
+
+        this.fun_three = function(){
+            return this.var_three;
+        };
+    };
+
+    let obj1 = new class_one();
+    console.log(
+        obj1.fun_one(),
+        obj1.fun_two(),
+        obj1.fun_three()
+    );                                  //Hello_1 Hello_2 Hello_3
+</script>
+-->
+
+
+<!--
+<script>
+    function class_one(arg1,arg2,arg3){
+        this.var_one = arg1;
+        this.var_two = arg2;
+        this.var_three = arg3;
+    };
+    let obj1 = new class_one("hello_1","hello_2","hello_3");
+    console.log( obj1.var_one, obj1.var_two, obj1.var_three );                      //hello_1 hello_2 hello_3
+
+    let obj2 = new class_one("welcome_1","welcome_2","welcome_3");
+    console.log( obj2.var_one, obj2.var_two, obj2.var_three );                      //welcome_1 welcome_2 welcome_3
+</script>
+-->
+
