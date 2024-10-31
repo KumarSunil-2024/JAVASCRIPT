@@ -1,0 +1,42 @@
+<!--
+    IIFE
+    ****
+        Immidiate Invokable Functional Expression
+
+        ES9
+
+        these functions called as self invokable functions
+
+        Syntax
+        ******
+        ((arg1,arg2,arg3,.....arg n)=>{
+            business logic
+        })(param1, param2,param3,....param n);
+--> 
+<!--
+<script>
+    (()=>{
+        console.log("Welcome to IIFE");
+    })();
+</script>
+-->
+
+<!--
+<script>
+    let msg=(()=>{
+        return "Welcome to Life";
+    })();
+    console.log(msg);
+</script>
+-->
+
+<script>
+    function class_one(){
+        this.wish="Js";
+        this.my=function(){
+            return `welcome to ${this.wish}`;
+        };
+    };
+    let obj1=new class_one();
+    console.log(obj1.my());
+</script>
