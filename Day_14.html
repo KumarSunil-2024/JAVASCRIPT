@@ -1,0 +1,338 @@
+<!--
+    JSON
+    ****
+        - JSON Stands for JavaScript Object Notation.
+
+        - JSON also called as JavaScript Objects.
+
+        - we can excahnge the data in fullstack application in two ways.
+
+            1) XML
+
+            2) JSON
+
+        - XML is heavy weight.
+
+        - JSON is light weight.
+
+        - JSON data suggested while transferring the data.
+
+        Syntax.
+        ******
+        1) Objects -------    {}
+
+        2) Arrays  --------   []
+
+        3) data    --------   key & value pairs
+
+                              key & value separated by using ":"
+
+-->
+
+
+<!--
+<script>
+    let obj = {
+        "sub_one" : "ReactJS",
+        "sub_two" : "NodeJS",
+        "sub_three" : "MongoDB"
+    };
+    console.log(obj.sub_one,
+                obj.sub_two,
+                obj.sub_three);                         //ReactJS NodeJS MongoDB
+</script>
+-->
+
+
+<!--
+<script>
+    let obj = {
+        "obj1": {"key1":"value1"},
+        "obj2":{"key2":"value2"},
+        "obj3":{"key3":"value3"}
+    };
+    console.log( obj.obj1.key1 );
+    console.log( obj.obj2.key2 );
+    console.log( obj.obj3.key3 );
+</script>
+-->
+
+<!--
+<script>
+    let obj = {
+        "key1":"Hello_1",
+        "key2":"Hello_2",
+        "key3":"Hello_3"
+    };
+    //iterate the json object
+    //ES6
+    //for...in loop
+    for(let k in obj){
+        console.log(k);                     //key1   key2   key3
+        console.log( typeof k );            //string string string
+        console.log( obj[k] );              //Hello_1 Hello_2 Hello_3
+    }
+</script>
+-->
+
+
+<!--
+<script>
+    let obj = {
+        "obj1":{
+            "sub_one":"json",
+            "sub_two":"reactjs",
+            "sub_three":"deno"
+        }
+    };
+    //for...in 
+    //ES6
+    for(let key in obj.obj1){
+        console.log( obj.obj1[key] );                   //json     reactjs   deno
+    }
+</script>
+-->
+
+
+
+<!--
+<script>
+   function fun_one(){
+       return "Hello";
+   }
+   console.log(
+        fun_one
+   );
+</script>
+-->
+
+
+<!--
+<script>
+   let obj = {
+        "oracle" : oracle,
+        "mysql"  : mysql,
+        "mongodb" : mongodb,
+        "cassandradb" : cassandradb()
+   };
+   function oracle(){
+       return "oracle connection soon....!";
+   }
+
+   function mysql(){
+       return "mysql connection soon....!";
+   }
+
+   function mongodb(){
+        return "mongodb connection soon....!";
+   };
+
+   function cassandradb(){
+        return "cassandradb connnection soon....!";
+   };
+
+   console.log( obj.oracle(), obj.mysql(), obj.mongodb(), obj.cassandradb );
+</script>
+-->
+
+
+<!--
+<script>
+   let obj = {
+        "key1" : ()=>{ return "Hello_1" },
+        "key2" : ()=>{ return "Hello_2" },
+        "key3" : ()=>{ return "Hello_3" }
+   };
+   console.log(
+        obj.key1(),
+        obj.key2(),
+        obj.key3()
+   );                   //Hello_1 Hello_2 Hello_3
+</script>
+-->
+
+<!--
+<script>
+    let obj = {
+        "key1" : "value1",
+        "key2" : "value2",
+        "key3" : "value3"
+    };
+    console.log(Object.keys(obj))       //['key1', 'key2', 'key3']
+    console.log(Object.values(obj));    //['value1', 'value2', 'value3']
+</script>
+-->
+
+<!--
+<script>
+
+    //deep copy
+    let obj1 = {
+        "key1":"Hello_1"
+    };
+
+    let obj2 = {...obj1};
+    
+    obj1.key1 = "Original Copy";
+    obj2.key1 = "Xerox Copy";
+
+    console.log(obj1);                  //{key1: 'Original Copy'}
+    console.log(obj2);                  //{key1: 'Xerox Copy'}
+
+
+
+</script>
+-->
+
+
+<!--
+<script>
+    let obj = {
+        "key1" : "Hello_1",
+        "key2" : "Hello_2",
+        "key3" : "Hello_3"
+    };
+    console.log( obj );             //{key1: 'Hello_1', key2: 'Hello_2', key3: 'Hello_3'}
+    delete obj.key3;
+    console.log( obj );             //{key1: 'Hello_1', key2: 'Hello_2'}
+</script>
+-->
+
+<!--
+<script>
+    let obj1 = {"key1":"Hello_1"};
+    let obj2 = {"key2":"Hello_2"};
+    let obj3 = {"key3":"Hello_3"};
+    let obj4 = {...obj1,...obj2,...obj3};
+    console.log(obj4);                      //{key1: 'Hello_1', key2: 'Hello_2', key3: 'Hello_3'}
+</script>
+-->
+
+<!--
+<script>
+    let obj1={};
+    obj1.key1 = "Hello_1";
+    obj1.key2 = "Hello_2";
+    obj1.key3 = "Hello_3";
+    console.log(obj1);                  //{key1: 'Hello_1', key2: 'Hello_2', key3: 'Hello_3'}
+</script>
+-->
+
+<!--
+<script>
+    let obj = {
+        "key1":"Hello_1",
+        "key2":"Hello_2",
+        "key3":"Hello_3"
+    };
+    obj.key1 = "welcome_1";
+    obj.key2 = "welcome_2";
+    obj.key3 = "welcome_3";
+    console.log(obj);               //{key1: 'welcome_1', key2: 'welcome_2', key3: 'welcome_3'}
+</script>
+-->
+
+
+<!--
+<script>
+    let obj = {
+        "key1":"Hello_1",
+        "key2":"Hello_2",
+        "key3":"Hello_3"
+    };
+    Object.freeze(obj);
+
+    //read
+    console.log(obj);           //{key1: 'Hello_1', key2: 'Hello_2', key3: 'Hello_3'}
+
+    //add
+    obj.key4 = "Hello_4";
+    console.log(obj);           //{key1: 'Hello_1', key2: 'Hello_2', key3: 'Hello_3'}
+
+    //update
+    obj.key1 = "welcome_1";
+    console.log(obj);           //{key1: 'Hello_1', key2: 'Hello_2', key3: 'Hello_3'}
+
+    //delete
+    delete obj.key1;
+    console.log(obj);           //{key1: 'Hello_1', key2: 'Hello_2', key3: 'Hello_3'}
+</script>
+-->
+
+
+
+<!--
+<script>
+    let obj = {
+        "key1":"Hello_1",
+        "key2":"Hello_2",
+        "key3":"Hello_3"
+    };
+    Object.seal(obj);
+
+    //read
+    console.log(obj);           //{key1: 'Hello_1', key2: 'Hello_2', key3: 'Hello_3'}
+
+    //add
+    obj.key4 = "Hello_4";
+    console.log(obj);           //{key1: 'Hello_1', key2: 'Hello_2', key3: 'Hello_3'}
+
+    //update
+    obj.key1 = "Welcome_1";
+    console.log(obj);           //{key1: 'Welcome_1', key2: 'Hello_2', key3: 'Hello_3'}
+
+
+    //delete
+    delete obj.key1;
+    console.log(obj);           //{key1: 'Welcome_1', key2: 'Hello_2', key3: 'Hello_3'}
+</script>
+-->
+
+<!--
+    freeze                      seal
+
+    "read" allow                  "read" allow
+
+    write not allow             write not allow
+
+    update not allow            "update" allow
+
+    delete not allow            delete not allow
+-->
+
+
+<!--
+<script>
+    let obj = {"key1":"Hello_1"};
+
+    //add key2  ----   disable update 
+    //add key3  ---    enable update 
+
+    Object.defineProperty(obj,"key2",{value:"Hello_2",writable:false});
+    Object.defineProperty(obj,"key3",{value:"Hello_3",writable:true});
+    console.log(obj);                   //{key1: 'Hello_1', key2: 'Hello_2', key3: 'Hello_3'}
+
+    obj.key2 = "welcome_2";
+    obj.key3 = "welcome_3";
+    console.log(obj);                   //{key1: 'Hello_1', key2: 'Hello_2', key3: 'welcome_3'}
+
+    delete obj.key2;
+    delete obj.key3;
+    console.log(obj);                   //{key1: 'Hello_1', key2: 'Hello_2', key3: 'welcome_3'}
+</script>
+-->
+
+<!--
+<script>
+    let obj = {
+        "key1" : "Hello_1"
+    };
+    Object.defineProperties(obj, { "key2":{"value":"Hello_2",writable:false}, 
+                                    "key3":{"value":"Hello_3",writable:true} });
+    console.log(obj);           //{key1: 'Hello_1', key2: 'Hello_2', key3: 'Hello_3'}
+
+    obj.key2 = "Welcome_2";
+    obj.key3 = "Welcome_3";
+    console.log(obj);           //{key1: 'Hello_1', key2: 'Hello_2', key3: 'Welcome_3'}
+</script>
+-->
