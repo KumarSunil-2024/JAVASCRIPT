@@ -1,0 +1,84 @@
+<!--
+<script>
+    let myson_function = {
+        "money":{"amount":1000},
+        "gold":{"weight":"1gr"},
+        "book":{"company":"react"},
+        "pen":{"company1":"reynolds"},
+    }; 
+    
+    let {money,gold,book,pen} = myson_function;
+    let {amount} = money;
+    let {weight} = gold;
+    let {company} = book;
+    let {company1} = pen;
+    console.log(amount,weight,company,company1);         //1000 '1gr' 'react' 'reynolds'
+</script>
+-->
+
+<!--
+<script>
+    let arr = [
+        {"e_id":111,"e_name":"e_one","e_sal":10000},
+        {"e_id":222,"e_name":"e_two","e_sal":20000},
+        {"e_id":333,"e_name":"e_three","e_sal":30000},
+        {"e_id":444,"e_name":"e_four","e_sal":40000},
+        {"e_id":555,"e_name":"e_five","e_sal":50000}
+    ];
+    document.write(`
+        <table border="1"
+               cellpadding="10px"
+               cellspacing="10px"
+               align="center">
+            <tr> 
+                <th>E_ID</th>
+                <th>E_NAME</th>
+                <th>E_SAL</th>   
+            </tr>
+    `);
+    arr.forEach((rec)=>{
+        document.write(`
+            <tr>
+                <td>${rec.e_id}</td>
+                <td>${rec.e_name}</td>
+                <td>${rec.e_sal}</td>
+            </tr>
+        `);
+    });
+    document.write(`</table>`);
+</script>
+-->
+
+ 
+<script>
+   let products = [
+       {name:"shirt1","cost":100,image:""},
+       {name:"shirt2","cost":200,image:""},
+       {name:"shirt3","cost":300,image:""},
+       {name:"pant1","cost":400,image:""},
+       {name:"pant2","cost":500,image:""},
+       {name:"pant3","cost":600,image:""}
+   ];
+   document.write(`
+        <table border="1"
+               cellpadding="10px"
+               cellspacing="10px"
+               align="center">
+            <tr>
+                <th>Name</th>
+                <th>Cost</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+   `);
+   products.forEach((record)=>{
+        document.write(`
+            <tr>
+                <td>${record.name}</td>
+                <td>${record.cost}</td>
+                <td><img width="20px" src=${record.image}></td>
+                
+            </tr>
+        `);
+   });
+</script>
